@@ -2,7 +2,10 @@ name: mirror
 
 on:
   schedule:
+    # two slots per hour: GitHub's scheduler skipped 5 of the first 6 hourly runs on 14 Sep 2026.
+    # concurrency below stops them overlapping; a run with no data changes commits nothing.
     - cron: "12 * * * *"
+    - cron: "42 * * * *"
   workflow_dispatch:
   push:
     paths:

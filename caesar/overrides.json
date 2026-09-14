@@ -1,0 +1,6 @@
+{
+  "_doc": "element id (string) -> {p_start_next, p_start_later, out_until_gw, note}. Minutes judgments the FPL flag does not carry. Remove when expired.",
+  "471": {"p_start_next": 0.35, "p_start_later": 0.75, "note": "Milenkovic (NFO): hamstring, scan Fri 11 Sep, missed GW4; FPL 75% flag. Treat GW5 as a doubt until Glasner Thu presser."},
+  "32": {"p_start_next": 0.4, "p_start_later": 0.7, "note": "Cash (AVL): muscular soreness, missed Brugge and GW4; Emery 'a few days'."},
+  "534": {"p_start_next": 0.3, "p_start_later": 0.35, "note": "Hume (SUN): dropped for Danso GW3 and GW4."}
+}

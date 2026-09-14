@@ -11,6 +11,8 @@ on:
     paths:
       - "mirror.py"
       - ".github/workflows/mirror.yml"
+      # sessions commit a timestamp here to force an immediate mirror run when the scheduler lags
+      - "trigger/**"
 
 permissions:
   contents: write

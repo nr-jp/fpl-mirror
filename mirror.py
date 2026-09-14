@@ -96,10 +96,12 @@ def write_players_csv(elements, path):
 
 
 def append_csv(path, header, rows):
-    if not rows:
-        return
+    # Always leave the file in place with its header, even with no rows, so sessions can read it
+    # (price_log.csv did not exist until the first price change and broke the runbook read).
     os.makedirs(os.path.dirname(path), exist_ok=True)
     new = not os.path.exists(path)
+    if not rows and not new:
+        return
     with open(path, "a", newline="") as f:
         w = csv.writer(f)
         if new:

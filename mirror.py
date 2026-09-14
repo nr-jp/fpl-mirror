@@ -9,6 +9,7 @@ Layout:
   data/entry/{ENTRY}/entry.json, history.json, transfers.json
   data/entry/{ENTRY}/picks/gw{N}.json    every gameweek that has a deadline in the past
   data/live/gw{N}.json                   event/N/live for current (and previous until data_checked)
+  data/element-summary/{id}.json         per player: history (per GW), history_past, fixtures. Daily 04 UTC
   data/leagues/overall_p1.json           world top 50
   data/leagues/overall_p200.json         ranks 9,951-10,000 (the top-10k cutoff)
   data/leagues/overall_p2000.json        ranks 99,951-100,000
@@ -81,6 +82,10 @@ SLIM = [
 ]
 
 
+def elements_sorted(boot):
+    return sorted(boot["elements"], key=lambda x: x["id"])
+
+
 def write_players_csv(elements, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", newline="") as f:
@@ -149,6 +154,26 @@ def main():
         target = os.path.join(D, "live", f"gw{gw}.json")
         if gw == cur_id or (not e.get("data_checked")) or not os.path.exists(target):
             save(get(f"event/{gw}/live/"), "live", f"gw{gw}.json")
+
+    # element summaries: prior-season totals + per-GW history. All players once a day
+    # (04:xx UTC run) or when the file is missing; owned players every run.
+    owned = set()
+    cur_picks = load("entry", str(ENTRY), "picks", f"gw{cur_id}.json")
+    if cur_picks:
+        owned = {p["element"] for p in cur_picks.get("picks", [])}
+    full = now.hour == 4 or os.environ.get("FULL") == "1"
+    n_es = 0
+    for e in elements_sorted(boot):
+        if e["status"] == "u" and e["minutes"] == 0:
+            continue
+        target = os.path.join(D, "element-summary", f"{e['id']}.json")
+        if full or e["id"] in owned or not os.path.exists(target):
+            js = get(f"element-summary/{e['id']}/", retries=2)
+            if js is not None:
+                save(js, "element-summary", f"{e['id']}.json")
+                n_es += 1
+                time.sleep(0.15)
+    print(f"element summaries fetched: {n_es}")
 
     # leagues
     save(get("leagues-classic/314/standings/?page_standings=1"), "leagues", "overall_p1.json")

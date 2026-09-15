@@ -1,6 +1,6 @@
 {
   "_doc": "element id (string) -> {p_start_next, p_start_later, out_until_gw, note}. Minutes judgments the FPL flag does not carry. Remove when expired.",
-  "471": {"p_start_next": 0.0, "p_start_later": 0.85, "out_until_gw": 6, "note": "Milenkovic (NFO): scan confirmed hamstring (Glasner 13 Sep). Misses GW5 v COV, 'confident he can make the game after that' = GW6 after the break. FPL flag still 75%."},
+  "471": {"p_start_next": 0.0, "p_start_later": 0.3, "out_until_gw": 7, "note": "Milenkovic (NFO): FPL flag now injured, 'expected back 11 Oct' (14 Sep 20:00 UTC). Misses GW5 and GW6 (10 Oct). GW7 earliest."},
   "32": {"p_start_next": 0.4, "p_start_later": 0.7, "note": "Cash (AVL): muscular soreness, missed Brugge and GW4. Emery 12 Sep: 'small injury, needed a few days'. GW5 is TOT (a) Sat 12:30, first game after the layoff. Check Thu presser."},
   "534": {"p_start_next": 0.3, "p_start_later": 0.35, "note": "Hume (SUN): 0 minutes GW3 and GW4, Danso preferred."},
   "10": {"p_start_next": 0.25, "p_start_later": 0.5, "note": "White (ARS): groin, subbed at HT v SUN 12 Sep, Timber (fit again, 45 min) replaced him. No FPL flag yet. Timber takes RB when fit, so later minutes capped even when White is fit. Check Fri presser."}

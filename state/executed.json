@@ -1,0 +1,18 @@
+{
+  "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
+  "gw": 5,
+  "executed_at": "2026-09-14 evening UK (manager confirmed 15 Sep)",
+  "chip": "wildcard",
+  "squad": [
+    "Raya (ARS)", "Leno (FUL)",
+    "Calafiori (ARS)", "Guehi (MCI)", "Gvardiol (MCI)", "Thomas (COV)", "Diop (IPS)",
+    "B.Fernandes (MUN)", "Mbeumo (MUN)", "Schade (BRE)", "Janelt (BRE)", "Yalcouye (BHA)",
+    "Haaland (MCI)", "Joao Pedro (CHE)", "Barry (EVE)"
+  ],
+  "bank": 0.0,
+  "captain": "Haaland (MCI)",
+  "vice": "B.Fernandes (MUN)",
+  "xi": ["Raya", "Calafiori", "Guehi", "Gvardiol", "B.Fernandes", "Mbeumo", "Schade", "Janelt", "Haaland", "Joao Pedro", "Barry"],
+  "bench_order": ["Thomas (COV)", "Diop (IPS)", "Yalcouye (BHA)", "Leno (FUL)"],
+  "pending_instruction": "none. Squad stands. Friday 18 Sep 10:00 UTC deadline session confirms XI/captain after pressers."
+}

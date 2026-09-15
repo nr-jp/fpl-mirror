@@ -21,9 +21,16 @@ git clone --depth 1 https://github.com/nr-jp/fpl-mirror /tmp/fpl && cd /tmp/fpl
 python3 -c "import json;m=json.load(open('data/derived/meta.json'));print(m['fetched_at'],m['current_event'],m['next_event'],m['next_deadline'],m['event_status'])"
 ```
 
-If `fetched_at` is more than 3 hours old, the hourly GitHub Action has stalled: check
-`https://github.com/nr-jp/fpl-mirror/actions`, and report it. Data files are described in the
-docstring at the top of `mirror.py`. Key ones:
+If `fetched_at` is more than 90 minutes old, GitHub's scheduler is lagging (it ran 5 of the first
+20 slots on 14 Sep). Force a run: commit the current UTC timestamp to `trigger/ping` on `main` with the
+GitHub tool (any push under `trigger/` starts the workflow). Wait 3 minutes, re-clone, re-check
+`fetched_at`. If it is still stale, report it with the last commit time. Do this before any decision.
+
+Price changes land between roughly 22:00 and 23:30 UTC (observed 14 Sep: 21:03 pull clean, 23:50 pull
+carried 11 falls). The 20:00 UTC run is the last look before them. Any price-motivated execution
+must reach the manager by 21:00 UTC (17:00 Toronto).
+
+Data files are described in the docstring at the top of `mirror.py`. Key ones:
 
 | file | use |
 |---|---|

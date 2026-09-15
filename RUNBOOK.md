@@ -1,4 +1,4 @@
-# CAESAR RUNBOOK (v4, 14 Sep 2026)
+# CAESAR RUNBOOK (v4.1, 15 Sep 2026)
 
 Operating procedure for every FPL session on entry **1950353 (Caesar Salahd)**, whether a
 scheduled run or a live chat. Objective: **finish inside the top 10,000 overall in 2026/27.**
@@ -43,6 +43,24 @@ Data files are described in the docstring at the top of `mirror.py`. Key ones:
 | `data/leagues/overall_p200.json` | the rank-10,000 cutoff score (last row) |
 | `data/derived/news_log.csv` | every status/news/chance change with timestamp (the injury monitor) |
 | `data/derived/price_log.csv` | every price change with timestamp |
+
+## 1b. What the manager has already done (every session, before any instruction)
+
+The FPL API does not expose upcoming-gameweek transfers or an active chip until the deadline passes.
+`transfers.json` and `history.json` chips lag by a full gameweek. So the mirror can never tell you
+whether the manager has executed this week's instruction. Read `state/executed.json` first. It holds
+the squad, chip, captain and XI the manager confirmed for the upcoming GW, and `pending_instruction`.
+Rules:
+- Never re-issue an instruction that `state/executed.json` shows as executed.
+- When the manager confirms an execution in chat, write it to `state/executed.json` in the same turn
+  (GitHub tool) and set `pending_instruction`.
+- The current squad the engine loads from `picks/gw{cur}.json` is stale after an execution. Probe the
+  executed squad with `--force-in` (all 15) and treat that as HOLD until the deadline passes.
+- After the deadline passes and the mirror's entry data catches up, clear the file to `{"gw": N+1,
+  "pending_instruction": "none"}`.
+- A re-run that moves an executed squad by less than 2 points over 8 GWs is noise. Do not swap
+  players on an active wildcard for noise; only a minutes or injury input reopens it. (15 Sep lesson:
+  a run re-issued a whole new WC draft the morning after the manager had executed the old one.)
 
 ## 2. Decide which session this is
 

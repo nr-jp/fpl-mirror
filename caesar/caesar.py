@@ -632,17 +632,18 @@ def main():
         f = G["fh"]
         print(f"\nFREE HIT: GW+0 gain {f['D']:+.1f} (threshold {FH_PREMIUM}) -> {'FIRE' if f['fires'] else 'HOLD'}")
     # captain / TC / BB on the best branch
+    # on an active WC the executed squad is the working squad; swaps are the analyst's call from the table
     best = G["wc"] if (G["wc"] and G["wc"]["fires"]) else G["best_none"]
-    sq = best["sol"]["squad"]
+    sq = G["hold"]["squad"] if wc_active else best["sol"]["squad"]
     pts0 = {i: XP[i][0] for i in sq}
     xi0 = best_xi(pts0, {i: models[i]["pos"] for i in sq})
     caps = sorted(xi0, key=lambda i: -pts0[i])[:4]
     bench0 = sum(pts0[i] for i in sq if i not in xi0)
     print(f"\nCAPTAIN options GW{gw}: " + " | ".join(f"{models[i]['name']} {pts0[i]:.1f} ({models[i]['own']:.0%} own)" for i in caps))
-    chip_this_gw = (G["wc"] and G["wc"]["fires"]) or (G["fh"] and G["fh"]["fires"])
+    chip_this_gw = wc_active or (G["wc"] and G["wc"]["fires"]) or (G["fh"] and G["fh"]["fires"])
     tc_ok = (not chip_this_gw) and pts0[caps[0]] >= TC_THRESHOLD and "3xc" in chips_left
     bb_ok = (not chip_this_gw) and bench0 >= BB_THRESHOLD and "bboost" in chips_left
-    print(f"TC: best {pts0[caps[0]]:.1f} vs {TC_THRESHOLD} -> {'SPEND' if tc_ok else 'hold'}   BB: bench {bench0:.1f} vs {BB_THRESHOLD} -> {'SPEND' if bb_ok else 'hold'}{'   (one chip per GW: WC/FH already firing)' if chip_this_gw else ''}")
+    print(f"TC: best {pts0[caps[0]]:.1f} vs {TC_THRESHOLD} -> {'SPEND' if tc_ok else 'hold'}   BB: bench {bench0:.1f} vs {BB_THRESHOLD} -> {'SPEND' if bb_ok else 'hold'}{'   (one chip per GW: WC/FH already in play)' if chip_this_gw else ''}")
     print("XI: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted(xi0, key=lambda i: (list(SQUAD).index(models[i]['pos']), -pts0[i]))))
     print("Bench: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted([i for i in sq if i not in xi0], key=lambda i: (models[i]['pos'] != 'GK', -pts0[i]))))
     print(f"\nTOP {a.top} by horizon xPts (all players):")

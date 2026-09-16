@@ -1,4 +1,4 @@
-# CAESAR RUNBOOK (v4.1, 15 Sep 2026)
+# CAESAR RUNBOOK (v4.2, 16 Sep 2026)
 
 Operating procedure for every FPL session on entry **1950353 (Caesar Salahd)**, whether a
 scheduled run or a live chat. Objective: **finish inside the top 10,000 overall in 2026/27.**
@@ -54,8 +54,10 @@ Rules:
 - Never re-issue an instruction that `state/executed.json` shows as executed.
 - When the manager confirms an execution in chat, write it to `state/executed.json` in the same turn
   (GitHub tool) and set `pending_instruction`.
-- The current squad the engine loads from `picks/gw{cur}.json` is stale after an execution. Probe the
-  executed squad with `--force-in` (all 15) and treat that as HOLD until the deadline passes.
+- The engine reads `state/executed.json` itself (16 Sep): when its `gw` matches the target GW, the
+  executed squad, bank and chip replace `picks/gw{cur}.json`. Sell prices come from its `purchase` map
+  (buy price + half the rise). With `chip: wildcard` every move is free and the BRANCH TABLE rows are
+  `WC*`: HOLD = the executed squad, then the best 1, 2, 3 and unlimited free swaps. No `--force-in` needed.
 - After the deadline passes and the mirror's entry data catches up, clear the file to `{"gw": N+1,
   "pending_instruction": "none"}`.
 - A re-run that moves an executed squad by less than 2 points over 8 GWs is noise. Do not swap

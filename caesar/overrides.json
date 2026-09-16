@@ -1,7 +1,29 @@
 {
   "_doc": "element id (string) -> {p_start_next, p_start_later, out_until_gw, note}. Minutes judgments the FPL flag does not carry. Remove when expired.",
-  "471": {"p_start_next": 0.0, "p_start_later": 0.3, "out_until_gw": 7, "note": "Milenkovic (NFO): FPL flag now injured, 'expected back 11 Oct' (14 Sep 20:00 UTC). Misses GW5 and GW6 (10 Oct). GW7 earliest."},
-  "32": {"p_start_next": 0.4, "p_start_later": 0.7, "note": "Cash (AVL): muscular soreness, missed Brugge and GW4. Emery 12 Sep: 'small injury, needed a few days'. GW5 is TOT (a) Sat 12:30, first game after the layoff. Check Thu presser."},
-  "534": {"p_start_next": 0.3, "p_start_later": 0.35, "note": "Hume (SUN): 0 minutes GW3 and GW4, Danso preferred."},
-  "10": {"p_start_next": 0.25, "p_start_later": 0.5, "note": "White (ARS): groin, subbed at HT v SUN 12 Sep, Timber (fit again, 45 min) replaced him. No FPL flag yet. Timber takes RB when fit, so later minutes capped even when White is fit. Check Fri presser."}
+  "471": {
+    "p_start_next": 0.0,
+    "p_start_later": 0.3,
+    "out_until_gw": 7,
+    "note": "Milenkovic (NFO): FPL flag now injured, 'expected back 11 Oct' (14 Sep 20:00 UTC). Misses GW5 and GW6 (10 Oct). GW7 earliest."
+  },
+  "32": {
+    "p_start_next": 0.4,
+    "p_start_later": 0.7,
+    "note": "Cash (AVL): muscular soreness, missed Brugge and GW4. Emery 12 Sep: 'small injury, needed a few days'. GW5 is TOT (a) Sat 12:30, first game after the layoff. Check Thu presser."
+  },
+  "534": {
+    "p_start_next": 0.3,
+    "p_start_later": 0.35,
+    "note": "Hume (SUN): 0 minutes GW3 and GW4, Danso preferred."
+  },
+  "10": {
+    "p_start_next": 0.25,
+    "p_start_later": 0.5,
+    "note": "White (ARS): FPL flag 75% muscular (15 Sep 22:09 UTC). Groin, subbed HT v SUN 12 Sep. Timber takes RB when fit, so later minutes capped. Not ours."
+  },
+  "165": {
+    "p_start_next": 0.6,
+    "p_start_later": 0.9,
+    "note": "Joao Pedro (CHE): missed the open part of Tue 15 Sep training at Cobham (Sky, James Savundra), no reason given, no FPL flag. BRE (a) Fri 18 Sep 20:00 UK, deadline 18:30. Thu Alonso presser decides. Remove if he trains Wed/Thu."
+  }
 }

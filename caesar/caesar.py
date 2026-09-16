@@ -16,6 +16,8 @@ Layers
   4. points            expected points per player per GW over the horizon
   5. optimiser         MILP (scipy HiGHS): squad, XI, captain, per transfer count / chip branch
   6. branch table      HOLD, 1..FT free, one hit, WC, FH; TC and BB overlays
+  7. executed state    state/executed.json overrides picks/bank/chip for the upcoming GW (API is blind pre-deadline);
+                       an active WC makes every move free and HOLD = the executed squad
 """
 import argparse
 import json
@@ -437,28 +439,33 @@ def best_xi(pts, pos):
 
 
 # ----------------------------------------------------------------------- the gate
-def run_gate(D, models, XP, XP8, incumbents, sell, bank, fts, H, chips_left):
+def run_gate(D, models, XP, XP8, incumbents, sell, bank, fts, H, chips_left, wc_active=False):
     opt = Optimiser(D, models, XP, incumbents, sell, bank, H)
     hold = opt.solve(0)
     hold_val, hold_gw = opt.value_of(hold["squad"], hold["xi"], hold["cap"])
     rows = []
-    max_t = fts + 1
-    for t in range(0, max_t + 1):
+    # active wildcard (state/executed.json): every move is free, FTs untouched, so the table is
+    # HOLD the executed squad vs 1..3 free swaps vs a full free re-draft on the same horizon
+    counts = [0, 1, 2, 3, 15] if wc_active else list(range(0, fts + 2))
+    for t in counts:
         sol = opt.solve(t)
         if sol is None:
             continue
         moves = len(set(sol["squad"]) - set(incumbents))
-        hits = max(0, moves - fts) * HIT_COST
-        banked = min(5, fts - moves + 1) if moves <= fts else 1
+        if wc_active:
+            hits, banked = 0.0, fts
+        else:
+            hits = max(0, moves - fts) * HIT_COST
+            banked = min(5, fts - moves + 1) if moves <= fts else 1
         v, per = opt.value_of(sol["squad"], sol["xi"], sol["cap"])
-        d = v - hold_val - hits + FT_VALUE * (banked - min(5, fts + 1))
-        rows.append(dict(chip="NONE", moves=moves, hits=hits, banked=banked, D=d, raw=v - hold_val,
+        d = v - hold_val - hits + FT_VALUE * (banked - min(5, fts + 1)) * (0 if wc_active else 1)
+        rows.append(dict(chip="WC*" if wc_active else "NONE", moves=moves, hits=hits, banked=banked, D=d, raw=v - hold_val,
                          gw0=per[0], sol=sol,
                          in_=sorted(set(sol["squad"]) - set(incumbents)), out=sorted(set(incumbents) - set(sol["squad"]))))
     best_none = max(rows, key=lambda r: r["D"])
     # wildcard: 8-GW horizon, premium over best non-chip branch on the same horizon
     wc = None
-    if "wildcard" in chips_left:
+    if "wildcard" in chips_left and not wc_active:
         opt8 = Optimiser(D, models, XP8, incumbents, sell, bank, WC_HORIZON)
         wsol = opt8.solve(15)
         b8 = opt8.solve(len(best_none["in_"]))
@@ -505,7 +512,10 @@ def main():
     ap.add_argument("--top", type=int, default=25)
     ap.add_argument("--force-in", default="", help="comma list of Name:CLUB to force into every branch")
     ap.add_argument("--force-out", default="", help="comma list of Name:CLUB to force out of every branch")
+    ap.add_argument("--executed", default=None, help="state/executed.json (default: <data>/../state/executed.json)")
     a = ap.parse_args()
+    if a.executed is None:
+        a.executed = os.path.join(os.path.dirname(os.path.abspath(a.data)), "state", "executed.json")
 
     D = Data(a.data)
     gw = a.gw or D.nxt
@@ -550,24 +560,57 @@ def main():
     chips_used = {c["name"] for c in hist.get("chips", [])}
     chips_left = {"wildcard", "freehit", "bboost", "3xc"} - chips_used
 
+    def norm(s):
+        import unicodedata
+        return "".join(ch for ch in unicodedata.normalize("NFKD", s) if not unicodedata.combining(ch)).lower().replace(" ", "").replace(".", "")
+
     def resolve(spec):
         ids = []
         for tok in [t for t in spec.split(",") if t.strip()]:
             n, _, c = tok.strip().partition(":")
-            hits = [i for i, m in models.items() if m["name"].lower() == n.lower() and (not c or m["club"].lower() == c.lower())]
+            hits = [i for i, m in models.items() if norm(m["name"]) == norm(n) and (not c or m["club"].lower() == c.lower())]
             if len(hits) != 1:
                 sys.exit(f"force spec {tok!r} matched {len(hits)} players: {[nm(models, i) for i in hits]}")
             ids.append(hits[0])
         return ids
+
+    # executed state: what the manager has already done for THIS gw (the API is blind to it
+    # until the deadline passes). Overrides picks/bank/chip when the file's gw matches.
+    wc_active = False
+    exec_note = ""
+    if a.executed and os.path.exists(a.executed):
+        X = json.load(open(a.executed))
+        if X.get("gw") == gw and X.get("squad"):
+            incumbents = resolve(",".join(s.replace(" (", ":").rstrip(")") for s in X["squad"]))
+            if len(incumbents) != 15:
+                sys.exit(f"executed.json squad resolved to {len(incumbents)} players, need 15")
+            purch = X.get("purchase", {})
+            sell = {}
+            for i in incumbents:
+                e = D.el[i]
+                now = e["now_cost"] / 10.0
+                b = float(purch.get(nm(models, i), purch.get(models[i]["name"], now)))
+                sell[i] = round(b + math.floor(max(0.0, now - b) * 10 / 2) / 10, 1) if now > b else now
+            if a.bank is None:
+                bank = float(X.get("bank", bank))
+            chip = (X.get("chip") or "none").lower()
+            if chip == "wildcard":
+                wc_active = True
+                chips_left.discard("wildcard")
+            elif chip in ("freehit", "free hit"):
+                chips_left.discard("freehit")
+            exec_note = f"EXECUTED STATE loaded from {a.executed}: gw {gw}, chip {chip}, bank {bank:.1f}, pending: {X.get('pending_instruction', '?')}"
     FORCE_IN[:] = resolve(a.force_in)
     FORCE_OUT[:] = resolve(a.force_out)
     if FORCE_IN or FORCE_OUT:
         print("PROBE: force in", [nm(models, i) for i in FORCE_IN], "force out", [nm(models, i) for i in FORCE_OUT])
-    G = run_gate(D, models, XP, XP8, incumbents, sell, bank, fts, H, chips_left)
+    G = run_gate(D, models, XP, XP8, incumbents, sell, bank, fts, H, chips_left, wc_active=wc_active)
 
     # ---- print
     ev = D.events[gw]
-    print(f"CAESAR v4 | GW{gw} | deadline {ev['deadline_time']} | horizon {H} | FTs {fts} | bank {bank:.1f} | chips {sorted(chips_left)}")
+    if exec_note:
+        print(exec_note)
+    print(f"CAESAR v4 | GW{gw} | deadline {ev['deadline_time']} | horizon {H} | FTs {fts} | bank {bank:.1f} | chips {sorted(chips_left)}{' | WILDCARD ACTIVE: moves are free, HOLD = executed squad' if wc_active else ''}")
     print(f"team strength blend: league avg xG/game {lg_avg:.2f}; live GWs {sorted(D.live)}; element summaries {len(D.summ)}")
     print("\nCURRENT SQUAD (GW+0 xPts, horizon xPts, p_start next, sell):")
     for i in sorted(incumbents, key=lambda i: -XP[i].sum()):

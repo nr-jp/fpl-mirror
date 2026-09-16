@@ -4,15 +4,61 @@
   "executed_at": "2026-09-14 evening UK (manager confirmed 15 Sep)",
   "chip": "wildcard",
   "squad": [
-    "Raya (ARS)", "Leno (FUL)",
-    "Calafiori (ARS)", "Guehi (MCI)", "Gvardiol (MCI)", "Thomas (COV)", "Diop (IPS)",
-    "B.Fernandes (MUN)", "Mbeumo (MUN)", "Schade (BRE)", "Janelt (BRE)", "Yalcouye (BHA)",
-    "Haaland (MCI)", "Joao Pedro (CHE)", "Barry (EVE)"
+    "Raya (ARS)",
+    "Leno (FUL)",
+    "Calafiori (ARS)",
+    "Guehi (MCI)",
+    "Gvardiol (MCI)",
+    "Thomas (COV)",
+    "Diop (IPS)",
+    "B.Fernandes (MUN)",
+    "Mbeumo (MUN)",
+    "Schade (BRE)",
+    "Janelt (BRE)",
+    "Yalcouye (BHA)",
+    "Haaland (MCI)",
+    "Joao Pedro (CHE)",
+    "Barry (EVE)"
   ],
   "bank": 0.0,
   "captain": "Haaland (MCI)",
   "vice": "B.Fernandes (MUN)",
-  "xi": ["Raya", "Calafiori", "Guehi", "Gvardiol", "B.Fernandes", "Mbeumo", "Schade", "Janelt", "Haaland", "Joao Pedro", "Barry"],
-  "bench_order": ["Thomas (COV)", "Diop (IPS)", "Yalcouye (BHA)", "Leno (FUL)"],
-  "pending_instruction": "none. Squad stands. Friday 18 Sep 10:00 UTC deadline session confirms XI/captain after pressers."
+  "xi": [
+    "Raya",
+    "Calafiori",
+    "Guehi",
+    "Gvardiol",
+    "B.Fernandes",
+    "Mbeumo",
+    "Schade",
+    "Janelt",
+    "Haaland",
+    "Joao Pedro",
+    "Barry"
+  ],
+  "bench_order": [
+    "Thomas (COV)",
+    "Diop (IPS)",
+    "Yalcouye (BHA)",
+    "Leno (FUL)"
+  ],
+  "pending_instruction": "none. Squad stands. Friday 18 Sep 10:00 UTC deadline session confirms XI/captain after pressers.",
+  "purchase": {
+    "Raya (ARS)": 6.0,
+    "Leno (FUL)": 4.5,
+    "Calafiori (ARS)": 5.5,
+    "Guéhi (MCI)": 6.0,
+    "Gvardiol (MCI)": 5.5,
+    "Thomas (COV)": 4.0,
+    "Diop (IPS)": 4.0,
+    "B.Fernandes (MUN)": 12.0,
+    "Mbeumo (MUN)": 7.9,
+    "Schade (BRE)": 6.0,
+    "Janelt (BRE)": 5.0,
+    "Yalcouyé (BHA)": 4.5,
+    "Haaland (MCI)": 15.5,
+    "João Pedro (CHE)": 7.5,
+    "Barry (EVE)": 5.6
+  },
+  "_purchase_doc": "buy prices at execution; sell = buy + floor(rise/2). Kept players use transfers.json / season-start price."
 }

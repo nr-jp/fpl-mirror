@@ -17,8 +17,13 @@
     "note": "White (ARS): FPL flag 75% muscular (15 Sep 22:09 UTC). Groin, subbed HT v SUN 12 Sep. Timber takes RB when fit, so later minutes capped. Not ours."
   },
   "165": {
-    "p_start_next": 0.1,
+    "p_start_next": 0.4,
     "p_start_later": 0.8,
-    "note": "Joao Pedro (CHE): knee injury (Globo via FFS 16 Sep), withdrawn from Brazil squad by CBF as injured, missed Tue training, FPL flag 75%. Sports Mole and Rotowire expect him to miss BRE (a) Fri 18 Sep. 3-week break before GW6 (10 Oct) so later minutes mostly protected. Set 17 Sep 12:25 UTC before Alonso presser (manager asked not to wait). Sold under the WC."
+    "note": "Joao Pedro (CHE): knee (Globo via FFS 16 Sep), withdrawn from Brazil, missed Tue training, FPL 75%. Alonso 17 Sep presser: 'no one is ruled out for Friday', 'we will see tomorrow if he's ready to play'. Late call, decision Fri; BRE v CHE kicks off 90 min after the deadline. Sold under the WC 17 Sep. Remove after the GW5 deadline."
+  },
+  "411": {
+    "p_start_next": 1.0,
+    "p_start_later": 1.0,
+    "note": "Haaland (MCI): left out of the EFL Cup squad v Norwich 17 Sep entirely (rested, Sports Mole confirmed XI). Fresh for SUN (h) Sun 20 Sep. Remove after GW5."
   }
 }

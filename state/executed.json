@@ -1,7 +1,7 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
   "gw": 5,
-  "executed_at": "2026-09-14 evening UK (manager confirmed 15 Sep)",
+  "executed_at": "WC + 11 transfers 2026-09-14 evening UK (confirmed 15 Sep); swap Joao Pedro/Yalcouye -> Calvert-Lewin/Tavernier confirmed 17 Sep ~12:50 UTC",
   "chip": "wildcard",
   "squad": [
     "Raya (ARS)",
@@ -15,9 +15,9 @@
     "Mbeumo (MUN)",
     "Schade (BRE)",
     "Janelt (BRE)",
-    "Yalcouye (BHA)",
+    "Tavernier (BOU)",
     "Haaland (MCI)",
-    "Joao Pedro (CHE)",
+    "Calvert-Lewin (LEE)",
     "Barry (EVE)"
   ],
   "bank": 0.0,
@@ -31,18 +31,18 @@
     "B.Fernandes",
     "Mbeumo",
     "Schade",
-    "Janelt",
+    "Tavernier",
     "Haaland",
-    "Joao Pedro",
-    "Barry"
+    "Barry",
+    "Calvert-Lewin"
   ],
   "bench_order": [
-    "Thomas (COV)",
+    "Janelt (BRE)",
     "Diop (IPS)",
-    "Yalcouye (BHA)",
+    "Thomas (COV)",
     "Leno (FUL)"
   ],
-  "pending_instruction": "ISSUED 17 Sep 12:30 UTC, NOT YET CONFIRMED BY MANAGER: on the active WC swap Joao Pedro (CHE) -> Calvert-Lewin (LEE) 6.0 and Yalcouye (BHA) -> Tavernier (BOU) 6.1, exactly funded (12.1 out, 12.1 in). Execute before 21:00 UTC 17 Sep (price moves). Fallback if Tavernier or Calvert-Lewin rises 0.1 first: Emersonn (IPS) 5.5 in place of Calvert-Lewin. Then XI 3-4-3 Raya; Calafiori, Guehi, Gvardiol; B.Fernandes, Mbeumo, Schade, Tavernier; Haaland (C), Barry, Calvert-Lewin. Bench 1) Janelt 2) Diop 3) Thomas, GK Leno. VC B.Fernandes. When the manager confirms, move the two in-legs into squad/purchase (Tavernier 6.1, Calvert-Lewin 6.0), drop Joao Pedro and Yalcouye, update xi and bench_order, set this to none.",
+  "pending_instruction": "none. Squad stands. Fri 18 Sep 10:00 UTC run confirms XI/captain/bench after Friday pressers; re-run only on a minutes or fitness input.",
   "purchase": {
     "Raya (ARS)": 6.0,
     "Leno (FUL)": 4.5,
@@ -55,9 +55,9 @@
     "Mbeumo (MUN)": 7.9,
     "Schade (BRE)": 6.0,
     "Janelt (BRE)": 5.0,
-    "Yalcouyé (BHA)": 4.5,
+    "Tavernier (BOU)": 6.1,
     "Haaland (MCI)": 15.5,
-    "João Pedro (CHE)": 7.5,
+    "Calvert-Lewin (LEE)": 6.0,
     "Barry (EVE)": 5.6
   },
   "_purchase_doc": "buy prices at execution; sell = buy + floor(rise/2). Kept players use transfers.json / season-start price."

@@ -17,8 +17,8 @@
     "note": "White (ARS): FPL flag 75% muscular (15 Sep 22:09 UTC). Groin, subbed HT v SUN 12 Sep. Timber takes RB when fit, so later minutes capped. Not ours."
   },
   "165": {
-    "p_start_next": 0.3,
-    "p_start_later": 0.6,
-    "note": "Joao Pedro (CHE): FPL flag 75% 'unspecified injury' (16 Sep 19:00 UTC). Withdrawn from Brazil squad by CBF as 'injured' (Football Today, Yahoo 16 Sep). Missed open training Tue. No Chelsea statement yet. BRE (a) Fri 20:00 UK, deadline 18:30. Alonso Thu presser decides; set 0 if ruled out, remove if he trains."
+    "p_start_next": 0.1,
+    "p_start_later": 0.8,
+    "note": "Joao Pedro (CHE): knee injury (Globo via FFS 16 Sep), withdrawn from Brazil squad by CBF as injured, missed Tue training, FPL flag 75%. Sports Mole and Rotowire expect him to miss BRE (a) Fri 18 Sep. 3-week break before GW6 (10 Oct) so later minutes mostly protected. Set 17 Sep 12:25 UTC before Alonso presser (manager asked not to wait). Sold under the WC."
   }
 }

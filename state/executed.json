@@ -42,7 +42,7 @@
     "Yalcouye (BHA)",
     "Leno (FUL)"
   ],
-  "pending_instruction": "none. Squad stands. Friday 18 Sep 10:00 UTC deadline session confirms XI/captain after pressers.",
+  "pending_instruction": "ISSUED 17 Sep 12:30 UTC, NOT YET CONFIRMED BY MANAGER: on the active WC swap Joao Pedro (CHE) -> Calvert-Lewin (LEE) 6.0 and Yalcouye (BHA) -> Tavernier (BOU) 6.1, exactly funded (12.1 out, 12.1 in). Execute before 21:00 UTC 17 Sep (price moves). Fallback if Tavernier or Calvert-Lewin rises 0.1 first: Emersonn (IPS) 5.5 in place of Calvert-Lewin. Then XI 3-4-3 Raya; Calafiori, Guehi, Gvardiol; B.Fernandes, Mbeumo, Schade, Tavernier; Haaland (C), Barry, Calvert-Lewin. Bench 1) Janelt 2) Diop 3) Thomas, GK Leno. VC B.Fernandes. When the manager confirms, move the two in-legs into squad/purchase (Tavernier 6.1, Calvert-Lewin 6.0), drop Joao Pedro and Yalcouye, update xi and bench_order, set this to none.",
   "purchase": {
     "Raya (ARS)": 6.0,
     "Leno (FUL)": 4.5,

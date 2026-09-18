@@ -24,6 +24,11 @@
   "411": {
     "p_start_next": 1.0,
     "p_start_later": 1.0,
-    "note": "Haaland (MCI): left out of the EFL Cup squad v Norwich 17 Sep entirely (rested, Sports Mole confirmed XI). Fresh for SUN (h) Sun 20 Sep. Remove after GW5."
+    "note": "Haaland (MCI): left out of the EFL Cup squad v Norwich 17 Sep entirely (rested, Sports Mole confirmed XI). Fresh for SUN (h) Sun 20 Sep. Price 15.5 -> 15.6 on 18 Sep (owned, sell 15.5). Remove after GW5."
+  },
+  "316": {
+    "p_start_next": 0.5,
+    "p_start_later": 0.85,
+    "note": "Emersonn (IPS): thigh, 'doubt for Saturday' (Sports Mole 17 Sep preview), no FPL flag. Engine in-leg only, not ours. Remove after GW5 if he starts."
   }
 }

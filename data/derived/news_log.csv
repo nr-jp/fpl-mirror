@@ -51,3 +51,8 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-09-18T14:26:34Z,400,Doku,MCI,i,d,0,75,Calf injury - Expected back 20 Sep,Calf injury - 75% chance of playing,2026-08-18T17:00:08.385597Z
 2026-09-18T14:26:34Z,131,Baleba,MUN,i,d,0,50,Ankle injury - Expected back 19 Sep,Ankle injury - 50% chance of playing,2026-08-06T16:00:10.997714Z
 2026-09-18T14:26:34Z,423,Shaw,MUN,d,d,75,50,Unspecified injury - 75% chance of playing,Unspecified injury - 50% chance of playing,2026-09-11T13:00:09.030120Z
+2026-09-18T16:42:29Z,29,M.Bizot,AVL,d,i,75,0,Back injury - 75% chance of playing,Back injury - Expected back 10 Oct,2026-09-17T07:30:09.058151Z
+2026-09-18T16:42:29Z,34,Pau,AVL,d,i,75,0,Hamstring injury - 75% chance of playing,Hamstring injury - Expected back 10 Oct,2026-09-12T18:00:08.712707Z
+2026-09-18T16:42:29Z,36,Maatsen,AVL,d,i,25,0,Ankle injury - 25% chance of playing,Ankle injury - Unknown return date,2026-09-12T18:00:08.729468Z
+2026-09-18T16:42:29Z,54,Gomes,AVL,d,a,75,100,Calf injury - 75% chance of playing,,2026-09-16T19:30:08.742410Z
+2026-09-18T16:42:29Z,448,Burn,NEW,i,i,0,0,Ankle injury - Expected back 19 Sep,Ankle injury - Expected back 12 Oct,2026-08-23T18:00:08.367241Z

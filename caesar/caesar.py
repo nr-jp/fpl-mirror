@@ -646,6 +646,26 @@ def main():
     print(f"TC: best {pts0[caps[0]]:.1f} vs {TC_THRESHOLD} -> {'SPEND' if tc_ok else 'hold'}   BB: bench {bench0:.1f} vs {BB_THRESHOLD} -> {'SPEND' if bb_ok else 'hold'}{'   (one chip per GW: WC/FH already in play)' if chip_this_gw else ''}")
     print("XI: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted(xi0, key=lambda i: (list(SQUAD).index(models[i]['pos']), -pts0[i]))))
     print("Bench: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted([i for i in sq if i not in xi0], key=lambda i: (models[i]['pos'] != 'GK', -pts0[i]))))
+    # on an active WC, also print the XI / captain / bench for every swap row so the analyst
+    # never has to build a branch's XI by hand (18 Sep fix; the 17 Sep run did it by hand)
+    branch_xi = []
+    if wc_active:
+        for r in G["rows"]:
+            if r["moves"] == 0:
+                continue
+            sqr = r["sol"]["squad"]
+            ptsr = {i: XP[i][0] for i in sqr}
+            xir = best_xi(ptsr, {i: models[i]["pos"] for i in sqr})
+            capr = max(xir, key=lambda i: ptsr[i])
+            vcr = sorted(xir, key=lambda i: -ptsr[i])[1]
+            benchr = sorted([i for i in sqr if i not in xir], key=lambda i: (models[i]["pos"] != "GK", -ptsr[i]))
+            xi_total = sum(ptsr[i] for i in xir) + ptsr[capr]
+            print(f"\nBRANCH {r['chip']} {r['moves']} moves (GW+0 XI with C {xi_total:.1f}):")
+            print("  XI: " + ", ".join(f"{nm(models, i)} {ptsr[i]:.1f}" for i in sorted(xir, key=lambda i: (list(SQUAD).index(models[i]['pos']), -ptsr[i]))))
+            print(f"  C {nm(models, capr)} | VC {nm(models, vcr)} | Bench: " + ", ".join(f"{nm(models, i)} {ptsr[i]:.1f}" for i in benchr))
+            branch_xi.append(dict(moves=r["moves"], xi=[models[i]["name"] for i in xir], cap=models[capr]["name"], vc=models[vcr]["name"],
+                                  bench=[models[i]["name"] for i in benchr], xi_total=float(xi_total),
+                                  squad_xp={models[i]["name"]: round(float(ptsr[i]), 2) for i in sqr}))
     print(f"\nTOP {a.top} by horizon xPts (all players):")
     top = sorted(models, key=lambda i: -XP[i].sum())[: a.top]
     for i in top:
@@ -665,6 +685,7 @@ def main():
                    fh=None if not G["fh"] else dict(D=G["fh"]["D"], fires=G["fh"]["fires"]),
                    captain=[dict(name=models[i]["name"], xp=pts0[i], own=models[i]["own"]) for i in caps],
                    xi=[models[i]["name"] for i in xi0],
+                   branch_xi=branch_xi,
                    squad_xp={models[i]["name"]: [round(float(x), 2) for x in XP[i]] for i in incumbents})
         json.dump(out, open(a.json, "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
 

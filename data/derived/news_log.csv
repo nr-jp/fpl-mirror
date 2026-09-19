@@ -64,3 +64,9 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-09-19T14:21:05Z,244,Armstrong,EVE,d,a,75,100,Unspecified injury - 75% chance of playing,,2026-09-17T08:30:08.942299Z
 2026-09-19T14:21:05Z,450,Livramento,NEW,a,d,100,75,,Unspecified injury - 75% chance of playing,2026-09-19T14:00:09.046677Z
 2026-09-19T14:21:05Z,499,Pedro Porro,TOT,a,d,100,75,,Unspecified injury - 75% chance of playing,2026-09-19T12:00:08.823872Z
+2026-09-19T17:57:49Z,175,van Ewijk,COV,a,d,,75,,Hamstring injury - 75% chance of playing,2026-09-19T16:00:09.486751Z
+2026-09-19T17:57:49Z,182,Amenda,COV,d,i,25,0,Calf injury - 25% chance of playing,Calf injury - Unknown return date,2026-09-17T07:30:09.329041Z
+2026-09-19T17:57:49Z,586,Mendy,HUL,i,a,0,100,Concussion - Expected back 11 Oct,,2026-09-12T18:00:09.334142Z
+2026-09-19T17:57:49Z,315,Fatawu,IPS,a,s,,0,,Suspended until 17 Oct,2026-09-19T15:30:10.126897Z
+2026-09-19T17:57:49Z,405,N.Gonzalez,NEW,i,a,0,100,Concussion - Expected back 12 Oct,,2026-09-14T21:30:07.343728Z
+2026-09-19T17:57:49Z,499,Pedro Porro,TOT,d,d,75,75,Unspecified injury - 75% chance of playing,Hamstring injury - 75% chance of playing,2026-09-19T12:00:08.823872Z

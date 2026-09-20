@@ -188,6 +188,7 @@ def price_prior(pos, price):
 def player_model(D, strength, lg_avg):
     """Return dict id -> model dict with rates, p_start, etc."""
     models = {}
+    fx_started = {f["id"]: bool(f.get("started")) for f in D.fixtures}
     team_games = defaultdict(int)
     for gw in D.finished_gws():
         for f in D.fixtures:
@@ -222,7 +223,10 @@ def player_model(D, strength, lg_avg):
         # minutes: recent starts from element-summary history, else season starts
         starts_recent = []
         if s:
-            hist = sorted(s.get("history", []), key=lambda r: r["round"])
+            # only fixtures that have kicked off: a live GW writes a 0-minute row for every
+            # player whose match has not started yet, and that is not a benching (fixed 20 Sep)
+            hist = sorted((r for r in s.get("history", [])
+                           if fx_started.get(r.get("fixture"), True)), key=lambda r: r["round"])
             for r in hist[-5:]:
                 starts_recent.append((r["round"], r.get("starts", 1 if r["minutes"] >= 60 else 0), r["minutes"]))
         tg = max(team_games[e["team"]], 1)
@@ -549,10 +553,16 @@ def main():
     bank = a.bank if a.bank is not None else last["bank"] / 10.0
     # free transfers: 1 + carried; derive from history (transfers made vs available), cap 5
     if a.fts is None:
-        # 1 FT for GW2; each later GW: carry = min(5, carry - used + 1), floor 1
+        # 1 FT for GW2; each later GW: carry = min(5, carry - used + 1), floor 1.
+        # A wildcard or free hit week freezes the count: banked FTs carry over unchanged, no +1
+        # (premierleague.com, "you will KEEP your banked transfers even when you play a chip";
+        # fixed 20 Sep after GW5 WC).
+        chip_gws = {c["event"] for c in hist.get("chips", []) if c["name"] in ("wildcard", "freehit")}
         fts = 1
         for row in hist["current"]:
             if row["event"] < 2:
+                continue
+            if row["event"] in chip_gws:
                 continue
             fts = max(1, min(5, fts - row["event_transfers"] + 1))
     else:

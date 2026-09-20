@@ -1,64 +1,6 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
-  "gw": 5,
-  "executed_at": "WC + 11 transfers 2026-09-14 evening UK (confirmed 15 Sep); swap Joao Pedro/Yalcouye -> Calvert-Lewin/Tavernier confirmed 17 Sep ~12:50 UTC; 5-swap Raya/Guehi/Tavernier/Diop/Calvert-Lewin -> Tzolakis/Mykolenko/Saka/Davis/McBurnie confirmed 18 Sep ~17:30 UTC (at the deadline)",
-  "chip": "wildcard",
-  "squad": [
-    "Tzolakis (HUL)",
-    "Leno (FUL)",
-    "Calafiori (ARS)",
-    "Gvardiol (MCI)",
-    "Mykolenko (EVE)",
-    "Thomas (COV)",
-    "Davis (IPS)",
-    "B.Fernandes (MUN)",
-    "Saka (ARS)",
-    "Mbeumo (MUN)",
-    "Schade (BRE)",
-    "Janelt (BRE)",
-    "Haaland (MCI)",
-    "Barry (EVE)",
-    "McBurnie (HUL)"
-  ],
-  "bank": 0.0,
-  "captain": "Haaland (MCI)",
-  "vice": "B.Fernandes (MUN)",
-  "xi": [
-    "Tzolakis",
-    "Calafiori",
-    "Gvardiol",
-    "Mykolenko",
-    "B.Fernandes",
-    "Saka",
-    "Mbeumo",
-    "Schade",
-    "Janelt",
-    "Haaland",
-    "Barry"
-  ],
-  "bench_order": [
-    "McBurnie (HUL)",
-    "Davis (IPS)",
-    "Thomas (COV)",
-    "Leno (FUL)"
-  ],
-  "pending_instruction": "none. GW5 deadline has passed (18 Sep 17:30 UTC). Manager confirmed the Saka 5-swap version in chat at the deadline. Next session: verify this squad against the mirror's entry/1950353/picks/gw5.json and transfers.json once they catch up, then clear this file to gw 6 with pending_instruction none; remove overrides 165, 411, 316 and 10. GW6 deadline Sat 10 Oct 11:00 BST, 1 FT.",
-  "purchase": {
-    "Tzolakis (HUL)": 4.6,
-    "Leno (FUL)": 4.5,
-    "Calafiori (ARS)": 5.5,
-    "Gvardiol (MCI)": 5.5,
-    "Mykolenko (EVE)": 4.5,
-    "Thomas (COV)": 4.0,
-    "Davis (IPS)": 4.0,
-    "B.Fernandes (MUN)": 12.0,
-    "Saka (ARS)": 9.5,
-    "Mbeumo (MUN)": 7.9,
-    "Schade (BRE)": 6.0,
-    "Janelt (BRE)": 5.0,
-    "Haaland (MCI)": 15.5,
-    "Barry (EVE)": 5.6,
-    "McBurnie (HUL)": 5.5
-  },
-  "_purchase_doc": "buy prices at execution; sell = buy + floor(rise/2). Kept players use transfers.json / season-start price. 18 Sep in-legs bought at 18 Sep prices; the five out-legs were sold at their sell prices (Raya 6.0, Guehi 6.0, Tavernier 6.1, Diop 4.0, Calvert-Lewin 6.0), exactly funding the 28.1 in."
+  "gw": 6,
+  "pending_instruction": "none",
+  "note": "Cleared 20 Sep 15:30 UTC. GW5 squad, WC chip and all 18 transfers verified against picks/gw5.json, history.json and transfers.json. GW6 deadline Sat 10 Oct 11:00 BST (10:00 UTC). FTs: 2 (banked FTs carry through a chip week unchanged per premierleague.com; 2 at the GW5 deadline, so 2 for GW6, 3 if rolled to GW7). ITB 0.0. Mid-GW run due Tue 6 or Wed 7 Oct."
 }

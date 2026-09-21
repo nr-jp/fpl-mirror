@@ -45,8 +45,10 @@ HIT_COST = 4.0
 WC_HORIZON = 8
 WC_PREMIUM = 6.0         # WC fires when it beats the best non-chip branch by this over WC_HORIZON
 FH_PREMIUM = 10.0        # FH fires when GW+0 squad beats the current squad by this
-TC_THRESHOLD = 7.0       # captain GW+0 xPts to spend TC
-BB_THRESHOLD = 10.0      # bench GW+0 xPts to spend BB
+TC_THRESHOLD = 7.0       # floor: captain GW+0 xPts to spend TC (window test below must also pass)
+BB_THRESHOLD = 10.0      # floor: bench GW+0 xPts to spend BB (window test below must also pass)
+CHIP_WINDOW_SLACK = 0.5  # TC/BB fire only if this GW is within this of the best remaining GW before expiry (21 Sep)
+SET1_LAST_GW = 19        # set-1 chips die at the GW19 deadline; set 2 runs GW20-38
 K_SHRINK_RATE = 10.0     # games of prior weight on xG/xA rates
 GOAL_BLEND = 0.15        # weight on actual goals vs xG in the observed rate
 HOME_BASE, AWAY_BASE = 1.50, 1.20   # league-average expected goals, home / away team
@@ -651,9 +653,26 @@ def main():
     bench0 = sum(pts0[i] for i in sq if i not in xi0)
     print(f"\nCAPTAIN options GW{gw}: " + " | ".join(f"{models[i]['name']} {pts0[i]:.1f} ({models[i]['own']:.0%} own)" for i in caps))
     chip_this_gw = wc_active or (G["wc"] and G["wc"]["fires"]) or (G["fh"] and G["fh"]["fires"])
-    tc_ok = (not chip_this_gw) and pts0[caps[0]] >= TC_THRESHOLD and "3xc" in chips_left
-    bb_ok = (not chip_this_gw) and bench0 >= BB_THRESHOLD and "bboost" in chips_left
-    print(f"TC: best {pts0[caps[0]]:.1f} vs {TC_THRESHOLD} -> {'SPEND' if tc_ok else 'hold'}   BB: bench {bench0:.1f} vs {BB_THRESHOLD} -> {'SPEND' if bb_ok else 'hold'}{'   (one chip per GW: WC/FH already in play)' if chip_this_gw else ''}")
+    # chip window (21 Sep): a static threshold spends TC on the first ordinary week. Project the current
+    # squad's best captain and bench over every remaining GW before the chip expires and fire only when
+    # this GW is within CHIP_WINDOW_SLACK of the window maximum. Doubles/blanks are in the fixture layer.
+    last_gw = SET1_LAST_GW if gw <= SET1_LAST_GW else 38
+    Hw = last_gw - gw + 1
+    fixw = fixture_layer(D, strength, gw, Hw)
+    XPw = points_matrix(D, models, fixw, gw, Hw)
+    win = []
+    for w in range(Hw):
+        pw = {i: XPw[i][w] for i in sq}
+        xiw = best_xi(pw, {i: models[i]["pos"] for i in sq})
+        capw = max(xiw, key=lambda i: pw[i])
+        win.append((gw + w, capw, pw[capw], sum(pw[i] for i in sq if i not in xiw)))
+    tc_max = max(win, key=lambda r: r[2]); bb_max = max(win, key=lambda r: r[3])
+    tc_ok = (not chip_this_gw) and "3xc" in chips_left and pts0[caps[0]] >= TC_THRESHOLD and pts0[caps[0]] >= tc_max[2] - CHIP_WINDOW_SLACK
+    bb_ok = (not chip_this_gw) and "bboost" in chips_left and bench0 >= BB_THRESHOLD and bench0 >= bb_max[3] - CHIP_WINDOW_SLACK
+    print(f"TC: best {pts0[caps[0]]:.1f} (floor {TC_THRESHOLD}; window max GW{tc_max[0]} {models[tc_max[1]]['name']} {tc_max[2]:.1f}) -> {'SPEND' if tc_ok else 'hold'}"
+          f"   BB: bench {bench0:.1f} (floor {BB_THRESHOLD}; window max GW{bb_max[0]} {bb_max[3]:.1f}) -> {'SPEND' if bb_ok else 'hold'}"
+          f"{'   (one chip per GW: WC/FH already in play)' if chip_this_gw else ''}")
+    print(f"CHIP WINDOW GW{gw}-{last_gw} (current squad, captain xPts / bench xPts): " + " ".join(f"{r[0]}:{r[2]:.1f}/{r[3]:.1f}" for r in win))
     print("XI: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted(xi0, key=lambda i: (list(SQUAD).index(models[i]['pos']), -pts0[i]))))
     print("Bench: " + ", ".join(f"{nm(models, i)} {pts0[i]:.1f}" for i in sorted([i for i in sq if i not in xi0], key=lambda i: (models[i]['pos'] != 'GK', -pts0[i]))))
     # on an active WC, also print the XI / captain / bench for every swap row so the analyst

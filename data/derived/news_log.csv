@@ -112,3 +112,12 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-10-05T22:34:43Z,20,Dowman,ARS,a,d,,75,,Unspecified injury - 75% chance of playing,2026-10-05T19:00:10.141532Z
 2026-10-06T02:54:59Z,362,Jacquet,LIV,a,d,100,75,,Hamstring injury - 75% chance of playing,2026-10-06T00:30:10.323830Z
 2026-10-06T21:35:51Z,444,Jaouen,NEW,d,i,50,0,Ankle injury - 50% chance of playing,Hamstring injury - Unknown return date,2026-09-10T16:00:09.127466Z
+2026-10-08T16:25:02Z,69,Scott,BOU,d,i,50,0,Thigh injury - 50% chance of playing,Thigh injury - Unknown return date,2026-10-05T09:30:09.910752Z
+2026-10-08T16:25:02Z,177,Kesler-Hayden,COV,i,d,0,50,Hamstring injury - Unknown return date,Hamstring injury - 50% chance of playing,2026-08-27T14:56:28.704361Z
+2026-10-08T16:25:02Z,260,Wilson,LEE,i,d,0,75,Thigh injury - Unknown return date,Thigh injury - 75% chance of playing,2026-09-18T13:30:09.626858Z
+2026-10-08T16:25:02Z,343,James,LEE,a,i,,0,,Back injury - Expected back 18 Oct,2026-10-08T14:00:11.803126Z
+2026-10-08T16:25:02Z,648,Bahoya,LEE,a,d,,75,,Ankle injury - 75% chance of playing,2026-10-08T14:00:12.276121Z
+2026-10-08T16:25:02Z,458,Joelinton,NEW,i,d,0,75,Unspecified injury - Unknown return date,Unspecified injury - 75% chance of playing,2026-08-16T08:00:08.074045Z
+2026-10-08T16:25:02Z,532,Ballard,SUN,d,i,75,0,Hamstring injury - 75% chance of playing,Hamstring injury - Unknown return date,2026-09-25T21:30:10.370384Z
+2026-10-08T16:25:02Z,543,Diarra,SUN,i,i,0,0,Hamstring injury - Unknown return date,Hamstring injury - Expected back 18 Oct,2026-08-30T16:30:08.428960Z
+2026-10-08T16:25:02Z,552,Brobbey,SUN,d,i,75,0,Hamstring injury - 75% chance of playing,Hamstring injury - Expected back 25 Oct,2026-09-24T21:30:10.382142Z

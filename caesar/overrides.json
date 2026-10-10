@@ -2,9 +2,9 @@
   "_doc": "element id (string) -> {p_start_next, p_start_later, out_until_gw, note}. Minutes judgments the FPL flag does not carry. Remove when expired.",
   "471": {
     "p_start_next": 0.0,
-    "p_start_later": 0.3,
-    "out_until_gw": 7,
-    "note": "Milenkovic (NFO): FPL injured 0%, 'expected back 11 Oct' (hamstring). NFO play CRY (a) Sun 11 Oct in GW6; treat as out for GW6, GW7 earliest. Refreshed 6 Oct."
+    "p_start_later": 0.2,
+    "out_until_gw": 8,
+    "note": "Milenkovic (NFO): FPL flag changed 9 Oct 16:08 UTC from hamstring 'expected back 11 Oct' to 'Knee injury - Unknown return date', 0%. Out for GW6 and GW7 at least. Not ours. Review at the GW7 mid-GW run."
   },
   "534": {
     "p_start_next": 0.3,
@@ -12,13 +12,13 @@
     "note": "Hume (SUN): 0 minutes GW3 and GW4, 11 min off the bench GW5 at MCI. Danso preferred."
   },
   "10": {
-    "p_start_next": 0.25,
-    "p_start_later": 0.5,
-    "note": "White (ARS): 0 minutes GW5 at BHA (Timber started RB), then FPL flag groin 75% (20 Sep 21:29 UTC). Timber takes RB when fit, so minutes capped. Not ours. Review after GW6 team sheet."
+    "p_start_next": 0.6,
+    "p_start_later": 0.6,
+    "note": "White (ARS): FPL cleared to 100% 9 Oct 16:08 UTC; Standard/Yahoo predicted XI v LEE has White at RB (9 Oct). Still shares RB with Timber, so capped. Not ours. Review after the GW6 team sheet."
   },
   "233": {
-    "p_start_next": 0.7,
+    "p_start_next": 0.5,
     "p_start_later": 0.95,
-    "note": "Mykolenko (EVE): started Ukraine v Hungary, missed Georgia with muscle discomfort, trained Wed 30 Sep, then withdrawn and left camp Thu 1 Oct ('not feeling very well', Maldera). FPL leg injury 75% from 1 Oct 20:29 UTC. Back at Finch Farm, 10 days to HUL (a) Sun 11 Oct. No Moyes comment yet; Friday presser decides. Set 6 Oct, review Fri 9 Oct."
+    "note": "Mykolenko (EVE): FPL leg injury 75%. Moyes Fri 9 Oct presser (Goodison News via Yahoo, 13:10 UTC): 'He's got a chance for Sunday, the extra day might help, we'll see.' Late call for HUL (a) Sun 11 Oct 14:00. Ours, 4th sub. Set 10 Oct, clear after GW6."
   }
 }

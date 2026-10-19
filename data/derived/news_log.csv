@@ -310,3 +310,5 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-10-18T17:17:48Z,471,Milenković,NFO,d,a,75,100,Knee injury - 75% chance of playing,,2026-09-12T14:00:09.705107Z
 2026-10-19T11:13:21Z,520,Bergvall,TOT,i,i,0,0,Knee injury - Expected back 7 Nov,Knee injury - Expected back 31 Oct,2026-10-18T13:00:09.356060Z
 2026-10-19T11:13:21Z,552,Brobbey,SUN,a,d,100,50,,Hamstring injury - 50% chance of playing,2026-10-19T11:00:09.674071Z
+2026-10-19T13:00:26Z,397,Semenyo,MCI,d,i,75,0,Knee injury - 75% chance of playing,Knee injury - Unknown return date,2026-10-17T17:30:09.977110Z
+2026-10-19T13:00:26Z,552,Brobbey,SUN,d,d,50,75,Hamstring injury - 50% chance of playing,Hamstring injury - 75% chance of playing,2026-10-19T11:00:09.674071Z

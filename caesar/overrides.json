@@ -3,8 +3,8 @@
   "471": {
     "p_start_next": 0.0,
     "p_start_later": 0.2,
-    "out_until_gw": 8,
-    "note": "Milenkovic (NFO): FPL flag changed 9 Oct 16:08 UTC from hamstring 'expected back 11 Oct' to 'Knee injury - Unknown return date', 0%. Out for GW6 and GW7 at least. Not ours. Review at the GW7 mid-GW run."
+    "out_until_gw": 10,
+    "note": "Milenkovic (NFO): knee, unknown return, 0%. Not ours. Reviewed 20 Oct, still out."
   },
   "534": {
     "p_start_next": 0.3,
@@ -16,9 +16,20 @@
     "p_start_later": 0.6,
     "note": "White (ARS): FPL cleared to 100% 9 Oct 16:08 UTC; Standard/Yahoo predicted XI v LEE has White at RB (9 Oct). Still shares RB with Timber, so capped. Not ours. Review after the GW6 team sheet."
   },
-  "233": {
-    "p_start_next": 0.5,
-    "p_start_later": 0.95,
-    "note": "Mykolenko (EVE): FPL leg injury 75%. Moyes Fri 9 Oct presser (Goodison News via Yahoo, 13:10 UTC): 'He's got a chance for Sunday, the extra day might help, we'll see.' Late call for HUL (a) Sun 11 Oct 14:00. Ours, 4th sub. Set 10 Oct, clear after GW6."
+  "98": {
+    "p_start_next": 0.0,
+    "p_start_later": 0.9,
+    "out_until_gw": 9,
+    "note": "Janelt (BRE): red card v LIV GW7 (17 Oct), FPL 'Suspended until 31 Oct'. BRE v NFO is 31 Oct (GW9), so one-match ban, misses HUL (a) GW8 only. Set 20 Oct, clear after GW8."
+  },
+  "391": {
+    "p_start_next": 0.7,
+    "p_start_later": 0.6,
+    "note": "Gvardiol (MCI): 24 min GW6, 29 min GW7 (both off the bench, O'Reilly at LB). Started v AEK 20 Oct (CL) with O'Reilly (back), Nunes, Kovacic out of the squad. O'Reilly doubtful for AVL (a) 24 Oct, so .70 next; later capped at .60 while O'Reilly is fit. Ours. Set 20 Oct."
+  },
+  "411": {
+    "p_start_next": 1.0,
+    "p_start_later": 1.0,
+    "note": "Haaland (MCI): foot knock v IPS 17 Oct (Clarke studs), FPL 75% 19 Oct, cleared 100% 20 Oct. Maresca Mon 19 Oct: 'can be available'. Bench v AEK 20 Oct (rest). Treat as fit for AVL (a) unless the Fri presser says otherwise. Ours. Set 20 Oct, clear after GW8."
   }
 }

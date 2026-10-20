@@ -1,6 +1,6 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
-  "gw": 6,
-  "pending_instruction": "none",
-  "note": "Cleared 20 Sep 15:30 UTC. GW5 squad, WC chip and all 18 transfers verified against picks/gw5.json, history.json and transfers.json. GW6 deadline Sat 10 Oct 11:00 BST (10:00 UTC). FTs: 2 (banked FTs carry through a chip week unchanged per premierleague.com; 2 at the GW5 deadline, so 2 for GW6, 3 if rolled to GW7). ITB 0.0. Mid-GW run due Tue 6 or Wed 7 Oct."
+  "gw": 8,
+  "pending_instruction": "GW8 provisional (20 Oct 23:00 UTC): Tavernier (BOU) + Diop (IPS) + Vuskovic (BHA) for Janelt (BRE) + Mykolenko (EVE) + Gvardiol (MCI), 3 FTs, 0 hits, ITB 0.0. Captain Haaland (MCI), VC Saka (ARS). Not yet confirmed by the manager. Fallback if a 0.1 leg breaks: Silva (BOU) for Vuskovic.",
+  "note": "Cleared to gw 8 on 20 Oct 22:50 UTC. GW7 verified against picks/gw7.json: TC on Haaland (C), Groß in for Schade (1 FT), Gvardiol kept, 2 FTs banked. FTs for GW8: 3. ITB 0.1. GW8 deadline Fri 23 Oct 17:30 UTC (18:30 BST, 13:30 Toronto)."
 }

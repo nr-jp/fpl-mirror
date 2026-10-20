@@ -333,3 +333,7 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-10-20T14:59:38Z,611,Wan-Bissaka,AVL,d,i,75,0,Hamstring injury - 75% chance of playing,Hamstring injury - Expected back 21 Nov,2026-10-17T19:30:10.120990Z
 2026-10-20T19:10:36Z,377,Munoz,LIV,a,d,,75,,Knee injury - 75% chance of playing,2026-10-20T18:30:09.999223Z
 2026-10-20T19:10:36Z,411,Haaland,MCI,d,a,75,100,Unspecified injury - 75% chance of playing,,2026-10-19T13:00:10.543876Z
+2026-10-20T20:50:38Z,421,Heaven,MUN,a,d,,75,,Illness - 75% chance of playing,2026-10-20T20:00:09.902224Z
+2026-10-20T20:50:38Z,423,Shaw,MUN,d,i,75,0,Unspecified injury - 75% chance of playing,Unspecified injury - Unknown return date,2026-10-12T21:30:08.995810Z
+2026-10-20T20:50:38Z,429,Rashford,MUN,a,d,100,75,,Hip injury - 75% chance of playing,2026-10-20T20:00:09.925594Z
+2026-10-20T20:50:38Z,432,Mainoo,MUN,d,i,75,0,Unspecified injury - 75% chance of playing,Unspecified injury - Expected back 8 Nov,2026-10-12T21:30:09.006287Z

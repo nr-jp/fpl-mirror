@@ -1,6 +1,6 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
-  "gw": 8,
-  "pending_instruction": "GW8 provisional (20 Oct 23:00 UTC): Tavernier (BOU) + Diop (IPS) + Vuskovic (BHA) for Janelt (BRE) + Mykolenko (EVE) + Gvardiol (MCI), 3 FTs, 0 hits, ITB 0.0. Captain Haaland (MCI), VC Saka (ARS). Not yet confirmed by the manager. Fallback if a 0.1 leg breaks: Silva (BOU) for Vuskovic.",
-  "note": "Cleared to gw 8 on 20 Oct 22:50 UTC. GW7 verified against picks/gw7.json: TC on Haaland (C), Groß in for Schade (1 FT), Gvardiol kept, 2 FTs banked. FTs for GW8: 3. ITB 0.1. GW8 deadline Fri 23 Oct 17:30 UTC (18:30 BST, 13:30 Toronto)."
+  "gw": 9,
+  "pending_instruction": "GW9 provisional (30 Oct 15:30 UTC): Gabriel (ARS) 7.9 + Gomez (BHA) 5.0 IN for Saka (ARS) 9.5 + Thomas (COV) 4.0 OUT, 1 FT + 1 hit (-4), ITB 0.6. BENCH BOOST. Captain Haaland (MCI), VC Tavernier (BOU). Execute Fri 30 Oct before 21:00 UTC. Not yet confirmed by the manager.",
+  "note": "Cleared to gw 9 on 30 Oct 15:10 UTC. GW8 verified against picks/gw8.json: Tavernier, Vuskovic, Diop in for Janelt, Gvardiol, Mykolenko (3 FTs, 20 Oct 23:07 UTC), Haaland (C), Saka and B.Fernandes left in the XI and auto-subbed for Diop and Davis. FTs for GW9: 1. ITB 0.0. GW9 deadline Sat 31 Oct 11:00 UTC (11:00 GMT, 07:00 Toronto)."
 }

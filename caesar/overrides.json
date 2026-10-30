@@ -16,20 +16,30 @@
     "p_start_later": 0.6,
     "note": "White (ARS): FPL cleared to 100% 9 Oct 16:08 UTC; Standard/Yahoo predicted XI v LEE has White at RB (9 Oct). Still shares RB with Timber, so capped. Not ours. Review after the GW6 team sheet."
   },
-  "98": {
-    "p_start_next": 0.0,
-    "p_start_later": 0.9,
-    "out_until_gw": 9,
-    "note": "Janelt (BRE): red card v LIV GW7 (17 Oct), FPL 'Suspended until 31 Oct'. BRE v NFO is 31 Oct (GW9), so one-match ban, misses HUL (a) GW8 only. Set 20 Oct, clear after GW8."
-  },
   "391": {
     "p_start_next": 0.7,
     "p_start_later": 0.6,
-    "note": "Gvardiol (MCI): 24 min GW6, 29 min GW7 (both off the bench, O'Reilly at LB). Started v AEK 20 Oct (CL) with O'Reilly (back), Nunes, Kovacic out of the squad. O'Reilly doubtful for AVL (a) 24 Oct, so .70 next; later capped at .60 while O'Reilly is fit. Ours. Set 20 Oct."
+    "note": "Gvardiol (MCI): sub GW6/7, started v AEK. Given three days off after AVL (Maresca 27 Oct). Not ours since GW8. Set 20 Oct, reviewed 30 Oct."
   },
-  "411": {
-    "p_start_next": 1.0,
-    "p_start_later": 1.0,
-    "note": "Haaland (MCI): foot knock v IPS 17 Oct (Clarke studs), FPL 75% 19 Oct, cleared 100% 20 Oct. Maresca Mon 19 Oct: 'can be available'. Bench v AEK 20 Oct (rest). Treat as fit for AVL (a) unless the Fri presser says otherwise. Ours. Set 20 Oct, clear after GW8."
+  "12": {
+    "p_start_next": 0.0,
+    "p_start_later": 0.0,
+    "out_until_gw": 15,
+    "note": "Saka (ARS): thigh, FPL 'unknown return' 23 Oct. Arteta 30 Oct: 'needed another scan'; Football London expects out until December. Ours. Set 30 Oct."
+  },
+  "426": {
+    "p_start_next": 0.75,
+    "p_start_later": 0.9,
+    "note": "B.Fernandes (MUN): dropped v BOU 25 Oct (unused sub) after criticising Carrick post-Como. Carrick 29 Oct: 'fully committed, we move forward', keeps the armband. Not confirmed to start at CHE. Ours. Set 30 Oct."
+  },
+  "8": {
+    "p_start_next": 0.7,
+    "p_start_later": 0.95,
+    "note": "Calafiori (ARS): off after 22 min v EVE GW8 (hip, FPL 75%). Arteta 30 Oct: trained Fri, 'if all is okay tomorrow they will be available'. LIV (a) Sun. Ours. Set 30 Oct."
+  },
+  "173": {
+    "p_start_next": 0.4,
+    "p_start_later": 0.85,
+    "note": "Thomas (COV): calf, off 59 min GW8, FPL 50%. Lampard 29 Oct: 'small calf issue, not sure about this weekend'. Mfuni deputised. Ours. Set 30 Oct."
   }
 }

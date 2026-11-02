@@ -413,3 +413,6 @@ ts,id,web_name,team,cost_from,cost_to,selected_by_percent,transfers_in_event,tra
 2026-11-01T02:32:06Z,491,Igor Jesus,NFO,57,56,1.1,12,1023
 2026-11-01T02:32:06Z,112,Van Hecke,TOT,49,50,9.8,47578,1100
 2026-11-01T02:32:06Z,532,Ballard,SUN,48,47,1.0,4,1230
+2026-11-02T01:00:12Z,7,Lewis-Skelly,ARS,54,53,0.5,211,701
+2026-11-02T01:00:12Z,285,McNair,HUL,40,39,0.1,34,105
+2026-11-02T01:00:12Z,361,Lucky,LIV,40,39,0.1,71,130

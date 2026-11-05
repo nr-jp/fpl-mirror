@@ -1,6 +1,6 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
-  "gw": 9,
-  "pending_instruction": "GW9 provisional (30 Oct 15:30 UTC): Gabriel (ARS) 7.9 + Gomez (BHA) 5.0 IN for Saka (ARS) 9.5 + Thomas (COV) 4.0 OUT, 1 FT + 1 hit (-4), ITB 0.6. BENCH BOOST. Captain Haaland (MCI), VC Tavernier (BOU). Execute Fri 30 Oct before 21:00 UTC. Not yet confirmed by the manager.",
-  "note": "Cleared to gw 9 on 30 Oct 15:10 UTC. GW8 verified against picks/gw8.json: Tavernier, Vuskovic, Diop in for Janelt, Gvardiol, Mykolenko (3 FTs, 20 Oct 23:07 UTC), Haaland (C), Saka and B.Fernandes left in the XI and auto-subbed for Diop and Davis. FTs for GW9: 1. ITB 0.0. GW9 deadline Sat 31 Oct 11:00 UTC (11:00 GMT, 07:00 Toronto)."
+  "gw": 10,
+  "pending_instruction": "GW10 provisional (5 Nov 16:40 UTC): Trafford (LEE) 5.0 IN for Tzolakis (HUL) 4.6 sell OUT, 1 FT, no hit, ITB 0.2. No chip. Captain Haaland (MCI), VC Tavernier (BOU). Execute before Fri 6 Nov 18:30 UTC. Not yet confirmed by the manager.",
+  "note": "Cleared to gw 10 on 5 Nov 16:10 UTC. GW9 verified against picks/gw9.json and transfers.json: Gabriel (ARS) 7.9 + Gomez (BHA) 5.0 in for Thomas (COV) 4.0 + Saka (ARS) 9.5 (30 Oct 16:47 UTC, 1 FT + 1 hit), Bench Boost played, Haaland (C), Tavernier (VC). FTs for GW10: 1. ITB 0.6. GW10 deadline Fri 6 Nov 18:30 UTC (18:30 GMT, 13:30 Toronto)."
 }

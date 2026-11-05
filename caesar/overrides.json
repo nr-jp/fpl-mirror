@@ -1,45 +1,44 @@
 {
   "_doc": "element id (string) -> {p_start_next, p_start_later, out_until_gw, note}. Minutes judgments the FPL flag does not carry. Remove when expired.",
-  "471": {
-    "p_start_next": 0.0,
-    "p_start_later": 0.2,
-    "out_until_gw": 10,
-    "note": "Milenkovic (NFO): knee, unknown return, 0%. Not ours. Reviewed 20 Oct, still out."
-  },
-  "534": {
-    "p_start_next": 0.3,
-    "p_start_later": 0.35,
-    "note": "Hume (SUN): 0 minutes GW3 and GW4, 11 min off the bench GW5 at MCI. Danso preferred."
-  },
   "10": {
     "p_start_next": 0.6,
     "p_start_later": 0.6,
     "note": "White (ARS): FPL cleared to 100% 9 Oct 16:08 UTC; Standard/Yahoo predicted XI v LEE has White at RB (9 Oct). Still shares RB with Timber, so capped. Not ours. Review after the GW6 team sheet."
   },
   "391": {
-    "p_start_next": 0.7,
-    "p_start_later": 0.6,
-    "note": "Gvardiol (MCI): sub GW6/7, started v AEK. Given three days off after AVL (Maresca 27 Oct). Not ours since GW8. Set 20 Oct, reviewed 30 Oct."
+    "p_start_next": 0.8,
+    "p_start_later": 0.7,
+    "note": "Gvardiol (MCI): 78 min GW9, predicted to start at NFO (False 9, 5 Nov) but FFS 'Rest' flag; shares with O'Reilly. Not ours. Set 5 Nov."
   },
   "12": {
     "p_start_next": 0.0,
     "p_start_later": 0.0,
     "out_until_gw": 15,
-    "note": "Saka (ARS): thigh, FPL 'unknown return' 23 Oct. Arteta 30 Oct: 'needed another scan'; Football London expects out until December. Ours. Set 30 Oct."
-  },
-  "426": {
-    "p_start_next": 0.75,
-    "p_start_later": 0.9,
-    "note": "B.Fernandes (MUN): dropped v BOU 25 Oct (unused sub) after criticising Carrick post-Como. Carrick 29 Oct: 'fully committed, we move forward', keeps the armband. Not confirmed to start at CHE. Ours. Set 30 Oct."
-  },
-  "8": {
-    "p_start_next": 0.7,
-    "p_start_later": 0.95,
-    "note": "Calafiori (ARS): off after 22 min v EVE GW8 (hip, FPL 75%). Arteta 30 Oct: trained Fri, 'if all is okay tomorrow they will be available'. LIV (a) Sun. Ours. Set 30 Oct."
+    "note": "Saka (ARS): thigh, FPL 'unknown return'. Arteta 30 Oct: needed another scan; arsenalcore 5 Nov: could be 'as long as eight weeks' from 21 Oct. Ours. Set 30 Oct, reviewed 5 Nov."
   },
   "173": {
-    "p_start_next": 0.4,
+    "p_start_next": 0.5,
+    "p_start_later": 0.9,
+    "note": "Thomas (COV): calf, 0 min GW9, FPL 50%. Everton FC 5 Nov: 'late fitness check' for Fri. Not ours. Set 5 Nov."
+  },
+  "31": {
+    "p_start_next": 0.5,
+    "p_start_later": 0.65,
+    "note": "Konsa (ARS): knee issue, off 62 min v Slavia 4 Nov, Arteta 'he had some issues and we decided to take him off'; Saliba back in full training. Friday presser decides. Not ours. Set 5 Nov."
+  },
+  "572": {
+    "p_start_next": 0.92,
     "p_start_later": 0.85,
-    "note": "Thomas (COV): calf, off 59 min GW8, FPL 50%. Lampard 29 Oct: 'small calf issue, not sure about this weekend'. Mfuni deputised. Ours. Set 30 Oct."
+    "note": "Tzolakis (HUL): 9 straight 90s. Butland (elbow) available again from 5 Nov (U21s Mon); Football London 5 Nov 'unlikely he would displace the Greek keeper'. Ours. Set 5 Nov."
+  },
+  "8": {
+    "p_start_next": 0.95,
+    "p_start_later": 0.95,
+    "note": "Calafiori (ARS): model reads GW8's 22-min injury exit as a .75; cleared to 100% 1 Nov, 90 at LIV GW9, rested (bench, 0 min) v Slavia 4 Nov, predicted to start v HUL (False 9 2 Nov, arsenalcore 5 Nov). Ours. Set 5 Nov."
+  },
+  "426": {
+    "p_start_next": 0.95,
+    "p_start_later": 0.95,
+    "note": "B.Fernandes (MUN): model reads the GW8 benching as a .75; started 90 at CHE GW9 and started v Roma 3 Nov (scored a penalty). Carrick stays. Ours. Set 5 Nov."
   }
 }

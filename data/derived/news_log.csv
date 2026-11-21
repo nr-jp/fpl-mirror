@@ -658,3 +658,10 @@ ts,id,web_name,team,status_from,status_to,chance_from,chance_to,news_from,news_t
 2026-11-21T16:55:49Z,455,Tonali,TOT,a,d,100,75,,Illness - 75% chance of playing,2026-11-21T16:30:05.729405Z
 2026-11-21T17:24:21Z,305,Davis,IPS,a,d,,75,,Unspecified injury - 75% chance of playing,2026-11-21T17:00:05.582448Z
 2026-11-21T17:24:21Z,501,Danso,SUN,a,n,100,0,,Ineligible to face parent club - Expected back 2 Dec,2026-11-21T17:00:05.766153Z
+2026-11-21T22:20:19Z,1,Raya,ARS,a,d,,75,,Shoulder injury - 75% chance of playing,2026-11-21T19:00:05.753960Z
+2026-11-21T22:20:19Z,20,Dowman,ARS,s,a,0,100,Suspended until 29 Nov,,2026-10-27T22:30:09.534466Z
+2026-11-21T22:20:19Z,207,Mingueza,CRY,a,d,,75,,Thigh injury - 75% chance of playing,2026-11-21T17:30:05.672662Z
+2026-11-21T22:20:19Z,211,Yeremy,CRY,a,s,,0,,Suspended until 2 Dec,2026-11-21T17:30:05.694046Z
+2026-11-21T22:20:19Z,449,Hall,NEW,a,d,,75,,Unspecified injury - 75% chance of playing,2026-11-21T19:30:06.216627Z
+2026-11-21T22:20:19Z,403,Sávio,TOT,a,d,100,75,,Unspecified injury - 75% chance of playing,2026-11-21T17:30:05.822258Z
+2026-11-21T22:20:19Z,455,Tonali,TOT,d,a,75,100,Illness - 75% chance of playing,,2026-11-21T16:30:05.729405Z

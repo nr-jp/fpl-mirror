@@ -1,0 +1,41 @@
+{
+ "gw": 11,
+ "horizon": 6,
+ "fts": 1,
+ "bank": 0.2,
+ "chips_left": ["freehit"],
+ "hold_val": 296.2282018290973,
+ "rows": [
+  {"chip": "NONE", "moves": 1, "hits": 0.0, "D": 0.9836480539647254, "gw0": 59.87449874651797, "in_": ["Silva"], "out": ["Calafiori"], "cap": "Haaland", "bank": 0.8},
+  {"chip": "NONE", "moves": 0, "hits": 0.0, "D": 0.0, "gw0": 59.981867976140926, "in_": [], "out": [], "cap": "Haaland", "bank": 0.2},
+  {"chip": "NONE", "moves": 2, "hits": 4.0, "D": -0.8424533894894239, "gw0": 60.51401449183786, "in_": ["E.Le Fée", "Silva"], "out": ["Calafiori", "Gomez"], "cap": "Haaland", "bank": 0.1}
+ ],
+ "wc": null,
+ "fh": {"D": 2.7035668025759136, "fires": false},
+ "captain": [
+  {"name": "Haaland", "xp": 6.97763513431884, "own": 0.788},
+  {"name": "Gabriel", "xp": 5.337945132629375, "own": 0.266},
+  {"name": "Tavernier", "xp": 5.160749727779826, "own": 0.323},
+  {"name": "Groß", "xp": 4.581030429128542, "own": 0.491}
+ ],
+ "xi": ["Trafford", "Gabriel", "Vuskovic", "Silva", "Tavernier", "Groß", "Haaland", "B.Fernandes", "Barry", "Mbeumo", "Gomez"],
+ "adopted": "HOLD (row 2): XI Trafford; Gabriel, Calafiori, Vuskovic; Tavernier, Groß, B.Fernandes, Mbeumo, Gomez; Haaland (C), Barry. Bench McBurnie, Diop, Davis, Leno. VC Gabriel.",
+ "branch_xi": [],
+ "squad_xp": {
+  "Trafford": [4.03, 5.18, 3.69, 4.8, 3.89, 4.45],
+  "Calafiori": [4.56, 3.35, 4.41, 4.31, 3.59, 4.19],
+  "Gabriel": [5.34, 4.11, 5.18, 5.1, 4.36, 4.93],
+  "Vuskovic": [4.52, 4.76, 3.71, 3.56, 4.49, 4.88],
+  "Mbeumo": [3.93, 4.42, 4.44, 5.09, 4.99, 3.58],
+  "Groß": [4.58, 5.1, 4.2, 4.01, 4.8, 5.5],
+  "B.Fernandes": [4.52, 5.12, 5.15, 5.94, 5.84, 4.06],
+  "Tavernier": [5.16, 5.38, 4.89, 5.47, 4.4, 5.52],
+  "Gomez": [3.92, 4.26, 3.63, 3.5, 4.06, 4.53],
+  "Haaland": [6.98, 5.76, 6.99, 7.37, 7.13, 7.62],
+  "Barry": [4.35, 4.36, 4.51, 4.47, 4.05, 3.92],
+  "Leno": [3.1, 3.12, 3.74, 3.62, 3.36, 3.65],
+  "McBurnie": [2.89, 3.08, 2.96, 2.75, 2.89, 2.75],
+  "Diop": [2.73, 3.12, 3.19, 2.66, 3.3, 2.09],
+  "Davis": [2.4, 3.02, 2.94, 2.34, 3.16, 1.76]
+ }
+}

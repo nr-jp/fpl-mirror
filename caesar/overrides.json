@@ -27,13 +27,13 @@
     "note": "Calafiori (ARS): model reads GW8's 22-min injury exit as a .75; cleared to 100% 1 Nov, 90 at LIV GW9, rested (bench, 0 min) v Slavia 4 Nov, predicted to start v HUL (False 9 2 Nov, arsenalcore 5 Nov). Ours. Set 5 Nov."
   },
   "426": {
-    "p_start_next": 0.95,
-    "p_start_later": 0.95,
-    "note": "B.Fernandes (MUN): Pochettino (appointed 18 Nov) confirmed him as captain 20 Nov; predicted XIs start him at 10. Started every game since GW8. Ours. Set 5 Nov, reviewed 21 Nov."
+    "p_start_next": 0.4,
+    "p_start_later": 0.9,
+    "note": "B.Fernandes (MUN): virus, missed training Fri 27 Nov. Pochettino: 'we don't know', 'we will not take any risks', call on Sat morning (manutd.com, Sports Mole). FPL 75%. 90 min and two goals at Sporting Wed 25 Nov. Ours until the GW12 instruction is executed. Set 27 Nov."
   },
   "427": {
     "p_start_next": 0.9,
     "p_start_later": 0.9,
-    "note": "Mbeumo (MUN): Pochettino appointed head coach 18 Nov, first game LIV (a) Sun 22 Nov. Every predicted XI starts him on the right; no injury. New-manager haircut (rule 1: minutes unproven until three league starts). Ours. Set 21 Nov."
+    "note": "Mbeumo (MUN): started at LIV GW11, off after 21 min (API starts 1, minutes 21; Yoro sent off early, likely tactical). Started at Sporting Wed 25 Nov; every predicted XI v BRE starts him (Sports Mole, AOL, False 9). Ours. Set 21 Nov, reviewed 27 Nov."
   }
 }

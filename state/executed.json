@@ -1,6 +1,6 @@
 {
   "_doc": "What the manager has actually executed for the UPCOMING gameweek. The FPL API does not expose upcoming-GW transfers or an active chip until the deadline passes, so every session reads this file before deciding whether an instruction is still pending. Written by the analyst from the manager's confirmation. Clear after the deadline passes and the mirror's entry data catches up.",
-  "gw": 11,
-  "pending_instruction": "GW11 provisional (21 Nov 07:55 UTC): HOLD, no transfer, roll to 2 FTs for GW12. No chip. Captain Haaland (MCI), VC Gabriel (ARS). XI 3-5-2: Trafford; Gabriel, Calafiori, Vuskovic; Tavernier, Groß, B.Fernandes, Mbeumo, Gomez; Haaland, Barry. Bench 1) McBurnie 2) Diop 3) Davis, GK Leno. Deadline Sat 21 Nov 11:00 UTC. Not yet confirmed by the manager.",
-  "note": "Cleared to gw 11 on 21 Nov 07:50 UTC. GW10 verified against picks/gw10.json and history.json: Trafford (LEE) 5.0 in for Tzolakis (HUL) 4.6 (5 Nov, 1 FT, no hit), no chip, Haaland (C), Tavernier (VC), 90 points. FTs for GW11: 1. ITB 0.2. GW11 deadline Sat 21 Nov 11:00 UTC (06:00 Toronto)."
+  "gw": 12,
+  "pending_instruction": "GW12 (27 Nov 16:20 UTC): OUT B.Fernandes (MUN) 11.6, McBurnie (HUL) 5.5. IN Wirtz (LIV) 7.5, Isak (LIV) 9.4. 2 FTs, no hit, ITB 0.4. No chip. Captain Tavernier (BOU), VC Haaland (MCI). XI 3-5-2: Trafford; Gabriel, Calafiori, Vuskovic; Tavernier, Groß, Gomez, Wirtz, Mbeumo; Haaland, Isak. Bench 1) Barry 2) Diop 3) Davis, GK Leno. Deadline Fri 27 Nov 18:30 UTC. Not yet confirmed by the manager.",
+  "note": "Cleared to gw 12 on 27 Nov 16:15 UTC. GW11 verified against picks/gw11.json and history.json: no transfer, no chip, Haaland (C), Tavernier (VC), 28 points, bench 16. FTs for GW12: 2. ITB 0.2."
 }
